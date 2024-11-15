@@ -48,7 +48,7 @@ def ocr_from_image(image_path):
     return text
 
 # Test the function with an image
-image_path = 'hand1.jpg'  # Replace with the path to your image file
+image_path = 'assets/hand1.jpg'  # Replace with the path to your image file
 extracted_text = ocr_from_image(image_path)
 
 # Print the extracted text
