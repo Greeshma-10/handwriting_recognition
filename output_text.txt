@@ -1,0 +1,15 @@
+'X PRESCRIPTION
+
+name Jane ‘Michelle Smit AGE.33
+appressi23 ADU St. Ca. patel 7-01-20
+
+RX: ABC Medicine (‘No Generics)
+
+disp: TI wenty 250mg capsules
+PO - take 1 capsule twice a day, 1x
+after breakfast, 1x after dinner
+
+refills: none
+
+* Avoid alcohol ~
+
