@@ -4,57 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OCR Tool</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        input[type="file"] {
-            margin: 10px 0;
-        }
-        #result {
-            margin-top: 20px;
-            white-space: pre-wrap;
-            background: #f9f9f9;
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>OCR Tool</h1>
+        <h1><i class="fas fa-camera"></i> OCR Tool</h1>
         <form id="ocr-form">
             <input type="file" name="image" accept="image/*" required>
             <button type="submit">Extract Text</button>
         </form>
         <div id="result"></div>
     </div>
-    <script>
-        const form = document.getElementById('ocr-form');
-        const resultDiv = document.getElementById('result');
 
-        form.addEventListener('submit', async (event) => {
-            event.preventDefault();
+    <div class="container1">
+        <footer class="footer">
+            <p class="text-center text-body-secondary">© 2024 | Handwriting Recognition Tool</p>
+        </footer>
+    </div>
 
-            const formData = new FormData(form);
-            const response = await fetch('/process-image', {
-                method: 'POST',
-                body: formData,
-            });
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
-            if (response.ok) {
-                const data = await response.json();
-                resultDiv.textContent = data.text || 'No text detected.';
-            } else {
-                resultDiv.textContent = 'Error processing image.';
-            }
-        });
-    </script>
 </body>
 </html>

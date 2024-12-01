@@ -1,0 +1,236 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+    --primary-color: #f0f8ff;
+    /* Alice Blue for background */
+    --secondary-color: #4682b4;
+    /* Steel Blue for accents */
+    --text-color: #2f4f4f;
+    /* Dark Slate Gray for text */
+    --shadow-color: rgba(70, 130, 180, 0.2);
+    /* Shadow in Steel Blue tone */
+    --hover-color: #5b9bd5;
+    /* Light Blue for hover effects */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Full viewport height */
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.container {
+    flex: 1;
+    /* This ensures the container takes up all available space */
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 10px 25px var(--shadow-color);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.container h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    position: relative;
+}
+
+.container h1::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 3px;
+    background: var(--secondary-color);
+    margin: 10px auto 0;
+    animation: slideIn 1.2s ease-in-out;
+}
+
+form {
+    margin-top: 20px;
+    /* Default spacing from top */
+    display: flex;
+    flex-direction: column;
+    /* Align elements vertically */
+    align-items: center;
+    /* Center items horizontally */
+}
+
+input[type="file"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px dashed var(--secondary-color);
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 50px;
+    /* Add space below the file input */
+}
+
+input[type="file"]:hover {
+    border-color: var(--hover-color);
+    background: #e6f2ff;
+    /* Soft blue background on hover */
+}
+
+button {
+    margin-top: 20px;
+    /* This can remain as an additional buffer */
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    background: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(71, 148, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: var(--hover-color);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(91, 155, 213, 0.4);
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-style:normal;
+    color: var(--text-color);
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.container1 {
+    margin-top: 50px;
+}
+
+footer {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid var(--shadow-color);
+    box-shadow: 0 -5px 10px var(--shadow-color);
+    margin-top: auto;
+    /* Pushes the footer to the bottom */
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 50%;
+    }
+}
+
+/* styles.css */
+
+/* Styling for failure message */
+#failure-message {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #ff4500;
+    /* Bright Red */
+    font-family: 'Playfair Display', serif;
+    background: rgba(255, 69, 0, 0.1);
+    /* Light red background */
+    padding: 15px;
+    border: 2px solid #ff4500;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(255, 69, 0, 0.3);
+    animation: shake 0.5s ease-in-out, fadeIn 1.5s ease-in-out;
+    display: none;
+    /* Hidden by default */
+    text-align: center;
+}
+
+/* Shake animation for dramatic effect */
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-10px);
+    }
+
+    40%,
+    80% {
+        transform: translateX(10px);
+    }
+}
+
+/* Fade in for smooth appearance */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+/* styles.css */
+
+/* Styling for the OCR extracted text */
+.ocr-text {
+    font-family:'Times New Roman', Times, serif, Times, serif; /* Handwriting-like font */
+    font-size: 1.5rem; /* Adjust text size */
+    white-space: pre-wrap; /* Preserve line breaks */
+    line-height: 1.6;
+    word-wrap: break-word;
+    color: #333;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
